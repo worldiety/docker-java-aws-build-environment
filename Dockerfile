@@ -3,7 +3,8 @@ MAINTAINER Julian Kahnert <julian.kahnert@worldiety.de>
 
 
 # set default java environment variable
-ENV JAVA_HOME=/usr/lib/jvm/default-jvm \
+ENV DEBIAN_FRONTEND=noninteractive \
+    JAVA_HOME=/usr/lib/jvm/default-jvm \
     PATH=${PATH}:/usr/lib/jvm/default-jvm/bin/
 
 
@@ -14,7 +15,7 @@ RUN apt-get update
 RUN apt-get -y dist-upgrade
 
 # install application
-RUN apt-get install -y --no-install-recommends awscli openjdk-8-jre
+RUN apt-get install -y --no-install-recommends awscli openjdk-8-jre git
 
 # fix default setting
 RUN ln -s java-8-openjdk-amd64  /usr/lib/jvm/default-jvm
