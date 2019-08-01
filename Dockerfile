@@ -6,15 +6,17 @@ MAINTAINER Julian Kahnert <julian.kahnert@worldiety.de>
 ENV JAVA_HOME=/usr/lib/jvm/default-jvm \
     PATH=${PATH}:/usr/lib/jvm/default-jvm/bin/
 
-
 # update data from repositories
-RUN apt-get update
+RUN apt-get -qq update
 
 # upgrade OS
-RUN apt-get -y dist-upgrade
+RUN apt-get -qq dist-upgrade
 
 # install application
-RUN apt-get install -y --no-install-recommends openjdk-8-jre git awscli mariadb-server 
+RUN apt-get install -qq awscli
+
+# install application
+RUN apt-get install -qq openjdk-8-jre git mariadb-server 
 
 # fix default setting
 RUN ln -s java-8-openjdk-amd64  /usr/lib/jvm/default-jvm
