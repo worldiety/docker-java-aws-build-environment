@@ -16,7 +16,7 @@ RUN apt-get -qq dist-upgrade
 RUN apt-get install -qq awscli
 
 # install application
-RUN apt-get install -qq openjdk-8-jre git mariadb-server 
+RUN apt-get install -qq openjdk-8-jdk git mariadb-server 
 
 # fix default setting
 RUN ln -s java-8-openjdk-amd64  /usr/lib/jvm/default-jvm
