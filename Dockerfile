@@ -14,7 +14,7 @@ RUN apt-get update
 RUN apt-get -y dist-upgrade
 
 # install application
-RUN apt-get install -y --no-install-recommends awscli openjdk-8-jre
+RUN apt-get install -y --no-install-recommends openjdk-8-jre git awscli mariadb-server 
 
 # fix default setting
 RUN ln -s java-8-openjdk-amd64  /usr/lib/jvm/default-jvm
