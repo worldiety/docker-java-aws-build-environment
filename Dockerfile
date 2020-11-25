@@ -1,5 +1,5 @@
 FROM ubuntu:18.04
-MAINTAINER Julian Kahnert <julian.kahnert@worldiety.de>
+MAINTAINER Thilo Willms <thilo.willms@worldiety.de>
 
 # set default java environment variable
 ENV JAVA_HOME=/usr/lib/jvm/default-jvm \
