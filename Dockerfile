@@ -1,7 +1,6 @@
 FROM ubuntu:18.04
 MAINTAINER Julian Kahnert <julian.kahnert@worldiety.de>
 
-
 # set default java environment variable
 ENV JAVA_HOME=/usr/lib/jvm/default-jvm \
     PATH=${PATH}:/usr/lib/jvm/default-jvm/bin/
@@ -13,16 +12,10 @@ RUN apt-get -qq update
 RUN apt-get -qq dist-upgrade
 
 # install application
-RUN apt-get install -qq awscli
+RUN apt-get install -qq redis-server -y
 
 # install application
-RUN apt-get install -qq openjdk-8-jdk git mariadb-server 
-
-# install redis and check version
-RUN apt-get install redis-server
-
-# fix default setting
-RUN ln -s java-8-openjdk-amd64  /usr/lib/jvm/default-jvm
+RUN DEBIAN_FRONTEND="noninteractive" apt-get install -qq awscli
 
 # remove apt cache from image
 RUN apt-get clean all
