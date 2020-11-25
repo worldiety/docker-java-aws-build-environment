@@ -16,10 +16,7 @@ RUN apt-get install -yqq redis-server
 
 # install application
 RUN DEBIAN_FRONTEND="noninteractive" apt-get install -qq awscli
-RUN apt-get install -qq openjdk-8-jdk git
-
-# fix default setting
-RUN ln -s java-8-openjdk-amd64 /usr/lib/jvm/default-jvm
+RUN apt-get install -qq  git
 
 # remove apt cache from image
 RUN apt-get clean all
