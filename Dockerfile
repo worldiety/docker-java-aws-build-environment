@@ -12,7 +12,7 @@ RUN apt-get -qq update
 RUN apt-get -qq dist-upgrade
 
 # install application
-RUN apt-get install -qq redis-server -y
+RUN apt-get install -yqq redis-server
 
 # install application
 RUN DEBIAN_FRONTEND="noninteractive" apt-get install -qq awscli
