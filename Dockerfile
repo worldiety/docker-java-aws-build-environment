@@ -16,7 +16,7 @@ RUN apt-get install -yqq redis-server
 
 # install application
 RUN DEBIAN_FRONTEND="noninteractive" apt-get install -qq awscli
-RUN apt-get install -qq  git
+RUN apt-get install -qq git
 
 # install java and update JAVA_HOME variable
 RUN apt-get install -y default-jdk
