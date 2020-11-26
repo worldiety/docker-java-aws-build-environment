@@ -18,5 +18,9 @@ RUN apt-get install -yqq redis-server
 RUN DEBIAN_FRONTEND="noninteractive" apt-get install -qq awscli
 RUN apt-get install -qq  git
 
+# install java and update JAVA_HOME variable
+RUN apt-get install -y default-jdk
+ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
+
 # remove apt cache from image
 RUN apt-get clean all
