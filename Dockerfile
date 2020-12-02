@@ -19,8 +19,8 @@ RUN DEBIAN_FRONTEND="noninteractive" apt-get install -qq awscli
 RUN apt-get install -qq git
 
 # install java and update JAVA_HOME variable
-RUN apt-get install -qq openjdk-11-jdk
-RUN ln -s java-11-openjdk-amd64 /usr/lib/jvm/default-jvm
+RUN apt-get install -qq openjdk-8-jdk
+RUN ln -s java-8-openjdk-amd64 /usr/lib/jvm/default-jvm
 
 # remove apt cache from image
 RUN apt-get clean all
